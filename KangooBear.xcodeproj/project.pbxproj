@@ -1,0 +1,291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9BBEBF4F1C5343BF00616059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEBF4E1C5343BF00616059 /* AppDelegate.swift */; };
+		9BBEBF511C5343BF00616059 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEBF501C5343BF00616059 /* ViewController.swift */; };
+		9BBEBF541C5343BF00616059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBEBF521C5343BF00616059 /* Main.storyboard */; };
+		9BBEBF561C5343BF00616059 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBEBF551C5343BF00616059 /* Assets.xcassets */; };
+		9BBEBF591C5343BF00616059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBEBF571C5343BF00616059 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9BBEBF4B1C5343BF00616059 /* KangooBear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KangooBear.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BBEBF4E1C5343BF00616059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9BBEBF501C5343BF00616059 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9BBEBF531C5343BF00616059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BBEBF551C5343BF00616059 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BBEBF581C5343BF00616059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BBEBF5A1C5343BF00616059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BBEBF481C5343BF00616059 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BBEBF421C5343BF00616059 = {
+			isa = PBXGroup;
+			children = (
+				9BBEBF4D1C5343BF00616059 /* KangooBear */,
+				9BBEBF4C1C5343BF00616059 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9BBEBF4C1C5343BF00616059 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BBEBF4B1C5343BF00616059 /* KangooBear.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BBEBF4D1C5343BF00616059 /* KangooBear */ = {
+			isa = PBXGroup;
+			children = (
+				9BBEBF4E1C5343BF00616059 /* AppDelegate.swift */,
+				9BBEBF501C5343BF00616059 /* ViewController.swift */,
+				9BBEBF521C5343BF00616059 /* Main.storyboard */,
+				9BBEBF551C5343BF00616059 /* Assets.xcassets */,
+				9BBEBF571C5343BF00616059 /* LaunchScreen.storyboard */,
+				9BBEBF5A1C5343BF00616059 /* Info.plist */,
+			);
+			path = KangooBear;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BBEBF4A1C5343BF00616059 /* KangooBear */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BBEBF5D1C5343BF00616059 /* Build configuration list for PBXNativeTarget "KangooBear" */;
+			buildPhases = (
+				9BBEBF471C5343BF00616059 /* Sources */,
+				9BBEBF481C5343BF00616059 /* Frameworks */,
+				9BBEBF491C5343BF00616059 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KangooBear;
+			productName = KangooBear;
+			productReference = 9BBEBF4B1C5343BF00616059 /* KangooBear.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BBEBF431C5343BF00616059 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = MultiEducator;
+				TargetAttributes = {
+					9BBEBF4A1C5343BF00616059 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 9BBEBF461C5343BF00616059 /* Build configuration list for PBXProject "KangooBear" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9BBEBF421C5343BF00616059;
+			productRefGroup = 9BBEBF4C1C5343BF00616059 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BBEBF4A1C5343BF00616059 /* KangooBear */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BBEBF491C5343BF00616059 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BBEBF591C5343BF00616059 /* LaunchScreen.storyboard in Resources */,
+				9BBEBF561C5343BF00616059 /* Assets.xcassets in Resources */,
+				9BBEBF541C5343BF00616059 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BBEBF471C5343BF00616059 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BBEBF511C5343BF00616059 /* ViewController.swift in Sources */,
+				9BBEBF4F1C5343BF00616059 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9BBEBF521C5343BF00616059 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BBEBF531C5343BF00616059 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9BBEBF571C5343BF00616059 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BBEBF581C5343BF00616059 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BBEBF5B1C5343BF00616059 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9BBEBF5C1C5343BF00616059 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BBEBF5E1C5343BF00616059 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KangooBear/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.multieducator.KangooBear;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9BBEBF5F1C5343BF00616059 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KangooBear/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.multieducator.KangooBear;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BBEBF461C5343BF00616059 /* Build configuration list for PBXProject "KangooBear" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BBEBF5B1C5343BF00616059 /* Debug */,
+				9BBEBF5C1C5343BF00616059 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BBEBF5D1C5343BF00616059 /* Build configuration list for PBXNativeTarget "KangooBear" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BBEBF5E1C5343BF00616059 /* Debug */,
+				9BBEBF5F1C5343BF00616059 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BBEBF431C5343BF00616059 /* Project object */;
+}
