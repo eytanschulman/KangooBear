@@ -12,6 +12,7 @@
 		9BBEBF541C5343BF00616059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBEBF521C5343BF00616059 /* Main.storyboard */; };
 		9BBEBF561C5343BF00616059 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBEBF551C5343BF00616059 /* Assets.xcassets */; };
 		9BBEBF591C5343BF00616059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBEBF571C5343BF00616059 /* LaunchScreen.storyboard */; };
+		9BBEBF621C53C73F00616059 /* PatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEBF611C53C73F00616059 /* PatientsViewController.swift */; };
 		CBAB66C975B7434323F3E401 /* Pods_KangooBear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6728CAB087B79ED65CE32456 /* Pods_KangooBear.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		9BBEBF551C5343BF00616059 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BBEBF581C5343BF00616059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BBEBF5A1C5343BF00616059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BBEBF611C53C73F00616059 /* PatientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsViewController.swift; sourceTree = "<group>"; };
 		ACACFD03630DCB6350781A59 /* Pods-KangooBear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KangooBear.release.xcconfig"; path = "Pods/Target Support Files/Pods-KangooBear/Pods-KangooBear.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 			children = (
 				9BBEBF4E1C5343BF00616059 /* AppDelegate.swift */,
 				9BBEBF501C5343BF00616059 /* ViewController.swift */,
+				9BBEBF611C53C73F00616059 /* PatientsViewController.swift */,
 				9BBEBF521C5343BF00616059 /* Main.storyboard */,
 				9BBEBF551C5343BF00616059 /* Assets.xcassets */,
 				9BBEBF571C5343BF00616059 /* LaunchScreen.storyboard */,
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BBEBF621C53C73F00616059 /* PatientsViewController.swift in Sources */,
 				9BBEBF511C5343BF00616059 /* ViewController.swift in Sources */,
 				9BBEBF4F1C5343BF00616059 /* AppDelegate.swift in Sources */,
 			);

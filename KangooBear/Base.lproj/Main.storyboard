@@ -17,53 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ooN-fM-fhp">
-                                <rect key="frame" x="174" y="304" width="253" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JpV-Qh-aSL">
-                                <rect key="frame" x="174" y="266" width="253" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="253" id="PP6-2C-yu9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KangooBear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ly4-HM-UkC">
-                                <rect key="frame" x="252" y="209" width="96" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="II2-Cw-mgs"/>
-                                    <constraint firstAttribute="height" constant="18" id="yrx-ba-34K"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCd-l0-O0H">
-                                <rect key="frame" x="187" y="360" width="227" height="46"/>
-                                <state key="normal" image="LogIn"/>
+                                <rect key="frame" x="187" y="247" width="227" height="46"/>
+                                <state key="normal" image="Patient SignIn"/>
                                 <connections>
-                                    <action selector="logInAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="rrP-Bm-HCa"/>
+                                    <action selector="patientLogIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Is-iE-E5O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuM-pG-BsK">
+                                <rect key="frame" x="187" y="306" width="227" height="46"/>
+                                <state key="normal" image="Doctor SignIn"/>
+                                <connections>
+                                    <action selector="doctorLogIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="tmN-LP-1o5"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ooN-fM-fhp" firstAttribute="top" secondItem="JpV-Qh-aSL" secondAttribute="bottom" constant="8" symbolic="YES" id="5FZ-CT-iYm"/>
-                            <constraint firstItem="JpV-Qh-aSL" firstAttribute="centerX" secondItem="ly4-HM-UkC" secondAttribute="centerX" id="7HL-dA-r4s"/>
-                            <constraint firstItem="ooN-fM-fhp" firstAttribute="leading" secondItem="JpV-Qh-aSL" secondAttribute="leading" id="G7e-35-iAK"/>
-                            <constraint firstItem="ly4-HM-UkC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JA5-kD-BEC"/>
-                            <constraint firstItem="UCd-l0-O0H" firstAttribute="top" secondItem="ooN-fM-fhp" secondAttribute="bottom" constant="26" id="MgA-yd-8jv"/>
-                            <constraint firstItem="JpV-Qh-aSL" firstAttribute="top" secondItem="ly4-HM-UkC" secondAttribute="bottom" constant="39" id="NAe-Tg-JY5"/>
-                            <constraint firstItem="ooN-fM-fhp" firstAttribute="trailing" secondItem="JpV-Qh-aSL" secondAttribute="trailing" id="VBR-xG-EVn"/>
-                            <constraint firstItem="ly4-HM-UkC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="189" id="eja-cg-FAp"/>
-                            <constraint firstItem="ooN-fM-fhp" firstAttribute="centerX" secondItem="UCd-l0-O0H" secondAttribute="centerX" id="so8-Fl-TAN"/>
+                            <constraint firstItem="UCd-l0-O0H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="1mY-UB-MQp"/>
+                            <constraint firstItem="UuM-pG-BsK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="29" id="39x-mG-ITN"/>
+                            <constraint firstItem="UuM-pG-BsK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h80-AF-Vz2"/>
+                            <constraint firstItem="UCd-l0-O0H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sXs-2c-26m"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordField" destination="ooN-fM-fhp" id="bfd-cs-878"/>
-                        <outlet property="userNameField" destination="JpV-Qh-aSL" id="2Oh-hu-Jwj"/>
                         <segue destination="kfY-kG-gNb" kind="presentation" identifier="PatientListSegue" id="0YK-wh-Sh6"/>
                     </connections>
                 </viewController>
@@ -80,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XYY-lM-6kR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="XYY-lM-6kR">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XYY-lM-6kR" id="K2Z-z2-Mrf">
@@ -98,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zkk-e9-LLM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="387"/>
+            <point key="canvasLocation" x="1773" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ba9-g6-3vf">
@@ -118,6 +95,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LogIn" width="227" height="46"/>
+        <image name="Doctor SignIn" width="227" height="46"/>
+        <image name="Patient SignIn" width="227" height="46"/>
     </resources>
 </document>

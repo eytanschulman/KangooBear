@@ -14,8 +14,13 @@ class ViewController: UIViewController {
     @IBOutlet var userNameField: UITextField!
     @IBOutlet var passwordField: UITextField!
     
-    @IBAction func logInAction() {
+    @IBAction func patientLogIn() {
 //        sendRequest(<#T##parameters: [String : String]##[String : String]#>)
+    }
+    
+    @IBAction func doctorLogIn() {
+//        sendRequest(<#T##parameters: [String : String]##[String : String]#>)
+        self.performSegueWithIdentifier("PatientListSegue", sender: nil)
     }
     
     func sendRequest(parameters: [String: String]) {
