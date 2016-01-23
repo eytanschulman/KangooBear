@@ -9,17 +9,44 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIWebViewDelegate {
     
     @IBOutlet var userNameField: UITextField!
     @IBOutlet var passwordField: UITextField!
     
     @IBAction func patientLogIn() {
-//        sendRequest(<#T##parameters: [String : String]##[String : String]#>)
+        showLogInUI()
+    }
+    
+    func showLogInUI() {
+        let webView = UIWebView(frame: CGRect(x: 0, y: 60, width: self.view.frame.size.width, height: self.view.frame.size.height - 20))
+        let url = NSURL(string: "https://jnj-dev.apigee.net/otr/oauth2/authorize?client_id=uZI5ipSGkkLBEXplEpOAjVBU1ODVzZyP")
+        if let realURL = url {
+            webView.loadRequest(NSURLRequest(URL:realURL))
+            webView.delegate = self
+            self.view.addSubview(webView)
+        }
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        if let html = webView.stringByEvaluatingJavaScriptFromString("document.body.innerHTML") {
+            if html.containsString("access_token") {
+                //WHOO THIS SHOULD BE GOOD
+                print("OMG IS IT PRINTING?")
+                let h3Location = html.rangeOfString("</h3>")
+                let rangeOfBracket = html.rangeOfString("}")
+                let rightRange = Range<String.Index>(start: (h3Location?.endIndex)!, end: (rangeOfBracket?.startIndex)!)
+                let JSONString = html.substringWithRange(rightRange)
+                print(html)
+                print(h3Location)
+                print(JSONString)
+                //                let newRange = h3Location[4]
+                //                let newRange = html.substringWithRange(Range<String.Index>(h3Location))
+            }
+        }
     }
     
     @IBAction func doctorLogIn() {
-//        sendRequest(<#T##parameters: [String : String]##[String : String]#>)
         self.performSegueWithIdentifier("PatientListSegue", sender: nil)
     }
     
