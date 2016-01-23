@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-KangooBear-KangooBear.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-KangooBear.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,7 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7998065E443040778594AEA6D938F61A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BE848D24D13D954919FDD03B8A2E9960</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C39760A7723E3EC275BD73D15C4C4569</key>
 		<dict>
 			<key>primary</key>
 			<true/>

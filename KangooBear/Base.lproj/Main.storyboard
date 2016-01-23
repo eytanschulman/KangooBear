@@ -34,26 +34,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCd-l0-O0H">
-                                <rect key="frame" x="187" y="247" width="227" height="46"/>
+                                <rect key="frame" x="187" y="277" width="227" height="46"/>
                                 <state key="normal" image="Patient SignIn"/>
                                 <connections>
                                     <action selector="patientLogIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Is-iE-E5O"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuM-pG-BsK">
-                                <rect key="frame" x="187" y="306" width="227" height="46"/>
-                                <state key="normal" image="Doctor SignIn"/>
-                                <connections>
-                                    <action selector="doctorLogIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="tmN-LP-1o5"/>
-                                    <segue destination="TUZ-U6-lBY" kind="show" identifier="PatientListSegue" id="BwZ-bt-vf1"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UCd-l0-O0H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="1mY-UB-MQp"/>
-                            <constraint firstItem="UuM-pG-BsK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="29" id="39x-mG-ITN"/>
-                            <constraint firstItem="UuM-pG-BsK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h80-AF-Vz2"/>
+                            <constraint firstItem="UCd-l0-O0H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1mY-UB-MQp"/>
                             <constraint firstItem="UCd-l0-O0H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sXs-2c-26m"/>
                         </constraints>
                     </view>
@@ -73,7 +63,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="XYY-lM-6kR">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XYY-lM-6kR" id="K2Z-z2-Mrf">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -94,7 +84,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Doctor SignIn" width="227" height="46"/>
         <image name="Patient SignIn" width="227" height="46"/>
     </resources>
 </document>

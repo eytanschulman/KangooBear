@@ -15,6 +15,7 @@
 		9BBEBF621C53C73F00616059 /* PatientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEBF611C53C73F00616059 /* PatientsViewController.swift */; };
 		9BBEBF641C53DC8600616059 /* OAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEBF631C53DC8600616059 /* OAuthManager.swift */; };
 		CBAB66C975B7434323F3E401 /* Pods_KangooBear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6728CAB087B79ED65CE32456 /* Pods_KangooBear.framework */; };
+		EAD5ED31E8FE18D652EA21FD /* Pods_KangooBear_KangooBear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BBC85083661A940E0CAE9F /* Pods_KangooBear_KangooBear.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9BBEBF611C53C73F00616059 /* PatientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsViewController.swift; sourceTree = "<group>"; };
 		9BBEBF631C53DC8600616059 /* OAuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthManager.swift; sourceTree = "<group>"; };
 		ACACFD03630DCB6350781A59 /* Pods-KangooBear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KangooBear.release.xcconfig"; path = "Pods/Target Support Files/Pods-KangooBear/Pods-KangooBear.release.xcconfig"; sourceTree = "<group>"; };
+		B8BBC85083661A940E0CAE9F /* Pods_KangooBear_KangooBear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KangooBear_KangooBear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBAB66C975B7434323F3E401 /* Pods_KangooBear.framework in Frameworks */,
+				EAD5ED31E8FE18D652EA21FD /* Pods_KangooBear_KangooBear.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				6728CAB087B79ED65CE32456 /* Pods_KangooBear.framework */,
+				B8BBC85083661A940E0CAE9F /* Pods_KangooBear_KangooBear.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,7 +180,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KangooBear/Pods-KangooBear-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KangooBear-KangooBear/Pods-KangooBear-KangooBear-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		773E2D172EC518207EB3BA9A /* Check Pods Manifest.lock */ = {
@@ -206,7 +210,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KangooBear/Pods-KangooBear-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KangooBear-KangooBear/Pods-KangooBear-KangooBear-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

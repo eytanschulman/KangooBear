@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController,UIWebViewDelegate {
     
@@ -35,28 +36,44 @@ class ViewController: UIViewController,UIWebViewDelegate {
                 print("OMG IS IT PRINTING?")
                 let h3Location = html.rangeOfString("</h3>")
                 let rangeOfBracket = html.rangeOfString("}")
-                let rightRange = Range<String.Index>(start: (h3Location?.endIndex)!, end: (rangeOfBracket?.startIndex)!)
+                let rightRange = Range<String.Index>(start: (h3Location?.endIndex)!, end: (rangeOfBracket?.endIndex)!)
                 let JSONString = html.substringWithRange(rightRange)
-                print(html)
-                print(h3Location)
-                print(JSONString)
+                
+                let withoutBackN = JSONString.stringByReplacingOccurrencesOfString("\n", withString: "")
+                
+                let withoutEscapedQuotes = withoutBackN.stringByReplacingOccurrencesOfString("\\\"", withString: "\"")
+                
+                if let data = withoutEscapedQuotes.dataUsingEncoding(NSUTF8StringEncoding) {
+                    let json = JSON(data: data)
+                    var returnDict = [String : String]()
+                    returnDict["access_token"] = json["access_token"].stringValue
+                    returnDict["scope"] = json["scope"].stringValue
+                    returnDict["subscription read"] = json["subscription read"].stringValue
+                    returnDict["token_type"] = json["token_type"].stringValue
+                    
+                    var modelData = [String: Dictionary<String,String>]()
+                    modelData["modelData"] = returnDict
+                    
+                    sendRequest(modelData)
+                }
+                
+                /*
+"{        \"access_token\":\"GY1Pk9wtA2A9IzJeNUsNbf1doha0\",         \"scope\":\"subscription read:healthdata\",         \"token_type\":\"BearerToken\"}"
+*/
+                
                 //                let newRange = h3Location[4]
                 //                let newRange = html.substringWithRange(Range<String.Index>(h3Location))
             }
         }
     }
     
-    @IBAction func doctorLogIn() {
-        self.performSegueWithIdentifier("PatientListSegue", sender: nil)
-    }
-    
-    func sendRequest(parameters: [String: String]) {
+    func sendRequest(parameters: [String: Dictionary<String,String>]) {
         
         let headers = ["Content-Type":"application/json"]
         
         let encoding = Alamofire.ParameterEncoding.JSON
         
-        Alamofire.request(.POST, "",parameters: parameters, headers:headers, encoding: encoding).validate(statusCode: 200..<300)
+        Alamofire.request(.POST, "http://google.com",parameters: parameters, headers:headers, encoding: encoding).validate(statusCode: 200..<300)
             .responseJSON{(response) in
                 
                 print(response.request)  // original URL request
@@ -75,11 +92,11 @@ class ViewController: UIViewController,UIWebViewDelegate {
                     print(rs)
                     
                     if let status = rs["status"] {
-                        let ac = UIAlertController(title: NSLocalizedString("Information Successfully Uploaded", comment: ""), message: nil, preferredStyle: .Alert)
-                        let action = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .Cancel, handler: nil)
-                        ac.addAction(action)
-                        print(status)
-                        self.presentViewController(ac, animated: true, completion: nil)
+//                        let ac = UIAlertController(title: NSLocalizedString("Information Successfully Uploaded", comment: ""), message: nil, preferredStyle: .Alert)
+//                        let action = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .Cancel, handler: nil)
+//                        ac.addAction(action)
+//                        print(status)
+//                        self.presentViewController(ac, animated: true, completion: nil)
                     }
                 }
         }

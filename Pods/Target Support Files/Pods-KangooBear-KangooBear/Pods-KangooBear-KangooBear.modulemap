@@ -1,0 +1,6 @@
+framework module Pods_KangooBear_KangooBear {
+  umbrella header "Pods-KangooBear-KangooBear-umbrella.h"
+
+  export *
+  module * { export * }
+}

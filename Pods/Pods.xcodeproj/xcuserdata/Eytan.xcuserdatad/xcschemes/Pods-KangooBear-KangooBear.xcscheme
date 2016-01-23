@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8645FC6341004072A3BE1575'
-               BlueprintName = 'Pods-KangooBear'
+               BlueprintIdentifier = 'E720D624C7C6597B2A3740A8'
+               BlueprintName = 'Pods-KangooBear-KangooBear'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_KangooBear.framework'>
+               BuildableName = 'Pods_KangooBear_KangooBear.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
