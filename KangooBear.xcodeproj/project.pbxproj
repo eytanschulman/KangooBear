@@ -12,9 +12,12 @@
 		9BBEBF541C5343BF00616059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBEBF521C5343BF00616059 /* Main.storyboard */; };
 		9BBEBF561C5343BF00616059 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBEBF551C5343BF00616059 /* Assets.xcassets */; };
 		9BBEBF591C5343BF00616059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBEBF571C5343BF00616059 /* LaunchScreen.storyboard */; };
+		CBAB66C975B7434323F3E401 /* Pods_KangooBear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6728CAB087B79ED65CE32456 /* Pods_KangooBear.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6728CAB087B79ED65CE32456 /* Pods_KangooBear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KangooBear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8357C25A366322CBC11C0E5C /* Pods-KangooBear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KangooBear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KangooBear/Pods-KangooBear.debug.xcconfig"; sourceTree = "<group>"; };
 		9BBEBF4B1C5343BF00616059 /* KangooBear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KangooBear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBEBF4E1C5343BF00616059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BBEBF501C5343BF00616059 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		9BBEBF551C5343BF00616059 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BBEBF581C5343BF00616059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BBEBF5A1C5343BF00616059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACACFD03630DCB6350781A59 /* Pods-KangooBear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KangooBear.release.xcconfig"; path = "Pods/Target Support Files/Pods-KangooBear/Pods-KangooBear.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBAB66C975B7434323F3E401 /* Pods_KangooBear.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		482A3A2547F1ED03D38FA62A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6728CAB087B79ED65CE32456 /* Pods_KangooBear.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D66E92C167E7091153D4C83 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8357C25A366322CBC11C0E5C /* Pods-KangooBear.debug.xcconfig */,
+				ACACFD03630DCB6350781A59 /* Pods-KangooBear.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9BBEBF421C5343BF00616059 = {
 			isa = PBXGroup;
 			children = (
 				9BBEBF4D1C5343BF00616059 /* KangooBear */,
 				9BBEBF4C1C5343BF00616059 /* Products */,
+				4D66E92C167E7091153D4C83 /* Pods */,
+				482A3A2547F1ED03D38FA62A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BBEBF5D1C5343BF00616059 /* Build configuration list for PBXNativeTarget "KangooBear" */;
 			buildPhases = (
+				773E2D172EC518207EB3BA9A /* Check Pods Manifest.lock */,
 				9BBEBF471C5343BF00616059 /* Sources */,
 				9BBEBF481C5343BF00616059 /* Frameworks */,
 				9BBEBF491C5343BF00616059 /* Resources */,
+				D217EC0210EC7C4EF3723D42 /* Embed Pods Frameworks */,
+				510D5DCA7A1FFF2B04B24C28 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		510D5DCA7A1FFF2B04B24C28 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KangooBear/Pods-KangooBear-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		773E2D172EC518207EB3BA9A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D217EC0210EC7C4EF3723D42 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KangooBear/Pods-KangooBear-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9BBEBF471C5343BF00616059 /* Sources */ = {
@@ -245,6 +320,7 @@
 		};
 		9BBEBF5E1C5343BF00616059 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8357C25A366322CBC11C0E5C /* Pods-KangooBear.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KangooBear/Info.plist;
@@ -256,6 +332,7 @@
 		};
 		9BBEBF5F1C5343BF00616059 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACACFD03630DCB6350781A59 /* Pods-KangooBear.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KangooBear/Info.plist;
@@ -284,6 +361,7 @@
 				9BBEBF5F1C5343BF00616059 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
