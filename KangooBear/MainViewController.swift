@@ -18,6 +18,15 @@ class MainViewController: UIViewController {
     @IBOutlet var costLabel: UILabel!
     @IBOutlet var deliveryTimeLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var requestDelivery: UIButton!
+    
+    var timer: NSTimer!
+    var dosage = ""
+    var json: JSON!
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +40,8 @@ class MainViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "removeUserDefaults")
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: self, action: "sendPush")
+        
+        NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "requestPeriodically", userInfo: nil, repeats: true)
     }
     
     
@@ -47,16 +58,21 @@ class MainViewController: UIViewController {
         }
     }
     
+    func requestPeriodically() {
+        sendRequest()
+    }
+    
     func loadDataFromDefaults() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         self.dosageLevelLabel.text = userDefaults.objectForKey("dosage") as? String
         self.costLabel.text = userDefaults.objectForKey("cost") as? String
         self.deliveryTimeLabel.text = userDefaults.objectForKey("deliveryTime") as? String
-        self.addressLabel.text = userDefaults.objectForKey("") as? String
+        self.addressLabel.text = userDefaults.objectForKey("address") as? String
     }
     
     @IBAction func performRequest() {
-
+        //is code going here?
+        sendPostmatesRequest()
     }
     
     func sendPush() {
@@ -69,50 +85,88 @@ class MainViewController: UIViewController {
     
     func sendRequest() {
         
-//        let headers = ["Content-Type":"application/json"]
+        //        let headers = ["Content-Type":"application/json"]
         
-//        let encoding = Alamofire.ParameterEncoding.JSON
+        //        let encoding = Alamofire.ParameterEncoding.JSON
         
         if let userID = NSUserDefaults.standardUserDefaults().objectForKey("userID") as? String! {
             
             let url = NSURL(string: "http://kangoobear.herokuapp.com/api/patients/\(userID)")
             if let u = url {
                 let patientData = NSData(contentsOfURL: u)
-                let json = JSON(data: patientData!)
-                
-                let userDefaults = NSUserDefaults.standardUserDefaults()
-                userDefaults.setObject(json["patients"]["dosage"].stringValue, forKey: "dosage")
-                userDefaults.setObject(json["patients"]["cost"].stringValue, forKey: "cost")
-                userDefaults.setObject(json["patients"]["deliveryTime"].stringValue, forKey: "deliveryTime")
-                userDefaults.setObject(json["patients"]["address"].stringValue, forKey: "address")
-                
-                self.dosageLevelLabel.text = json["patients"]["dosage"].stringValue
-                self.costLabel.text = json["patients"]["cost"].stringValue
-                self.deliveryTimeLabel.text = json["patients"]["deliveryTime"].stringValue
-                self.addressLabel.text = json["patients"]["address"].stringValue
-                
-                print(json)
-                
-                if Int(json["patients"]["dosage"].stringValue.stringByReplacingOccurrencesOfString("IU", withString: "")) == 100 {
-                    //NO PRESCRIPTIONS
-                    self.noPrescriptionView.hidden = false
-                    self.hasPrescriptionView.hidden = true
-                } else {
-                    //HAS PRESCRIPTIONS
-                    self.noPrescriptionView.hidden = true
-                    self.hasPrescriptionView.hidden = false
+                if let pd = patientData {
+                    json = JSON(data: pd)
+                    
+                    let userDefaults = NSUserDefaults.standardUserDefaults()
+                    
+                    if json["patient"]["dosage"].stringValue != userDefaults.objectForKey("dosage") as? String {
+                        self.noPrescriptionView.hidden = true
+                        self.hasPrescriptionView.hidden = false
+                        //has prescription
+                        self.requestDelivery.hidden = false
+                    } else {
+                        self.noPrescriptionView.hidden = false
+                        self.hasPrescriptionView.hidden = true
+                        self.requestDelivery.hidden = true
+                    }
+                    
+                    self.dosageLevelLabel.text = json["patient"]["dosage"].stringValue
+                    self.costLabel.text = "$\(json["postmates"]["fee"].numberValue.integerValue/100)"
+                    self.deliveryTimeLabel.text = "\(json["postmates"]["duration"].stringValue) Minutes"
+                    
+                    self.addressLabel.text = json["patient"]["address"].stringValue
+                    
+                    print(json)
+                    
+//                    if !dosageRequestedExists(json["patient"]["dosage"].stringValue) {
+//                        if Int(json["patient"]["dosage"].stringValue.stringByReplacingOccurrencesOfString("IU", withString: "")) == 100 {
+//                            //NO PRESCRIPTIONS
+//                            self.noPrescriptionView.hidden = false
+//                            self.hasPrescriptionView.hidden = true
+//                        } else {
+//                            //HAS PRESCRIPTIONS
+//                            self.noPrescriptionView.hidden = true
+//                            self.hasPrescriptionView.hidden = false
+//                        }
+//                    }
+                    
                 }
             }
+        } else {
+            print("There's no userID in the defaults, thanks Jessica.")
+        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func sendPostmatesRequest() {
+        let headers = ["Content-Type":"application/json"]
+        
+        let encoding = Alamofire.ParameterEncoding.JSON
+        
+        if let userID = NSUserDefaults.standardUserDefaults().objectForKey("userID") as? String! {
             
-//            Alamofire.request(.GET, "http://kangoobear.herokuapp.com/api/patients/\(userID))", headers:headers, encoding: encoding).validate(statusCode: 200..<300)
-//                .responseJSON{(response) in
-//                    
-//                    print(response.request)  // original URL request
-//                    print(response.response) // URL response
-//                    print(response.data)     // server data
-//                    print(response.result)   // result of response serialization
-//                    print(response.request?.HTTPBody)
-//                    
+            Alamofire.request(.POST, "http://kangoobear.herokuapp.com/api/patients/\(userID))", headers:headers, encoding: encoding).validate(statusCode: 200..<300)
+                .responseJSON{(response) in
+                    
+                    print(response.request)  // original URL request
+                    print(response.response) // URL response
+                    print(response.data)     // server data
+                    print(response.result)   // result of response serialization
+                    print(response.request?.HTTPBody)
+                    
+                    let userDefaults = NSUserDefaults.standardUserDefaults()
+                    userDefaults.setObject(self.json["patient"]["dosage"].stringValue, forKey: "dosage")
+                    userDefaults.setObject("$\(self.json["postmates"]["fee"].numberValue.integerValue/100)", forKey: "cost")
+                    userDefaults.setObject("\(self.json["postmates"]["duration"].stringValue) Minutes", forKey: "deliveryTime")
+                    userDefaults.setObject(self.json["patient"]["address"].stringValue, forKey: "address")
+                    
+                    self.performSegueWithIdentifier("ShipmentVC", sender: nil)
+                    
 //                    if let JSONResponse = response.result.value {
 //                        //                    print("JSON: \(JSONResponse)")
 //                        
@@ -124,19 +178,16 @@ class MainViewController: UIViewController {
 //                            }
 //                        }
 //                    }
-//                    
-//                    print(response.result.value)
-//            }
-        } else {
-            print("There's no userID in the defaults, thanks Jessica.")
+                    
+                    print(response.result.value)
+            }
+
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    @IBAction func getBackToPrescriptionVC(segue: UIStoryboardSegue) {
+        
+    }
 
     /*
     // MARK: - Navigation

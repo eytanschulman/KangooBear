@@ -124,6 +124,7 @@ class ExtraInfoViewController: UITableViewController,UITextFieldDelegate {
                     returnDict["token_type"] = json["token_type"].stringValue
                     returnDict["name"] = nameTextField.text
                     returnDict["address"] = "\(addressTextField.text!), \(cityTextField.text!), \(stateTextField.text!), \(zipTextField.text!)"
+                    returnDict["phone"] = self.phoneNumberTextField.text
                     
                     var modelData = [String: Dictionary<String,String>]()
                     modelData["modelData"] = returnDict
