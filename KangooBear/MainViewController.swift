@@ -1,5 +1,5 @@
 //
-//  PatientsViewController.swift
+//  MainViewController.swift
 //  KangooBear
 //
 //  Created by Eytan Schulman on 1/23/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PatientsViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,7 @@ class PatientsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     /*
     // MARK: - Navigation

@@ -15,7 +15,7 @@ class ViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet var userNameField: UITextField!
     @IBOutlet var passwordField: UITextField!
     
-    @IBAction func patientLogIn() {
+    @IBAction func signIn() {
         showLogInUI()
     }
     
@@ -43,19 +43,7 @@ class ViewController: UIViewController,UIWebViewDelegate {
                 
                 let withoutEscapedQuotes = withoutBackN.stringByReplacingOccurrencesOfString("\\\"", withString: "\"")
                 
-                if let data = withoutEscapedQuotes.dataUsingEncoding(NSUTF8StringEncoding) {
-                    let json = JSON(data: data)
-                    var returnDict = [String : String]()
-                    returnDict["access_token"] = json["access_token"].stringValue
-                    returnDict["scope"] = json["scope"].stringValue
-                    returnDict["subscription read"] = json["subscription read"].stringValue
-                    returnDict["token_type"] = json["token_type"].stringValue
-                    
-                    var modelData = [String: Dictionary<String,String>]()
-                    modelData["modelData"] = returnDict
-                    
-                    sendRequest(modelData)
-                }
+                self.performSegueWithIdentifier("MoreInfoSegue", sender: withoutEscapedQuotes)
                 
                 /*
 "{        \"access_token\":\"GY1Pk9wtA2A9IzJeNUsNbf1doha0\",         \"scope\":\"subscription read:healthdata\",         \"token_type\":\"BearerToken\"}"
@@ -67,38 +55,12 @@ class ViewController: UIViewController,UIWebViewDelegate {
         }
     }
     
-    func sendRequest(parameters: [String: Dictionary<String,String>]) {
-        
-        let headers = ["Content-Type":"application/json"]
-        
-        let encoding = Alamofire.ParameterEncoding.JSON
-        
-        Alamofire.request(.POST, "http://google.com",parameters: parameters, headers:headers, encoding: encoding).validate(statusCode: 200..<300)
-            .responseJSON{(response) in
-                
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                print(response.request?.HTTPBody)
-                
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
-                
-                print(response.result.value)
-                
-                if let rs = response.result.value as? Dictionary<String,Int> {
-                    print(rs)
-                    
-                    if let status = rs["status"] {
-//                        let ac = UIAlertController(title: NSLocalizedString("Information Successfully Uploaded", comment: ""), message: nil, preferredStyle: .Alert)
-//                        let action = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .Cancel, handler: nil)
-//                        ac.addAction(action)
-//                        print(status)
-//                        self.presentViewController(ac, animated: true, completion: nil)
-                    }
-                }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "MoreInfoSegue" {
+            let destVC = (segue.destinationViewController as? UINavigationController)?.topViewController as? ExtraInfoViewController
+            if let pJSONString = sender as? String {
+                destVC?.passedJSONString = pJSONString
+            }
         }
     }
     
