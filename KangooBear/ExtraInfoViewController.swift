@@ -43,11 +43,11 @@ class ExtraInfoViewController: UITableViewController,UITextFieldDelegate {
     
     func secretButtonVerySecretMuchWowFillInInfo() {
         self.nameTextField.text = "Bryan Hart"
-        self.addressTextField.text = "1937 Creekside Drive"
-        self.cityTextField.text = "East Hartford"
-        self.stateTextField.text = "CT"
-        self.zipTextField.text = "06118"
-        self.phoneNumberTextField.text = "202-555-0164"
+        self.addressTextField.text = "1932 Annin St"
+        self.cityTextField.text = "Philadelphia"
+        self.stateTextField.text = "PA"
+        self.zipTextField.text = "19146"
+        self.phoneNumberTextField.text = "(215)-267-8394"
         
         if everythingFilledOut() {
             self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -123,7 +123,7 @@ class ExtraInfoViewController: UITableViewController,UITextFieldDelegate {
                     returnDict["subscription read"] = json["subscription read"].stringValue
                     returnDict["token_type"] = json["token_type"].stringValue
                     returnDict["name"] = nameTextField.text
-                    returnDict["address"] = "\(addressTextField.text!), \(cityTextField.text!),\(stateTextField.text!),\(zipTextField.text!)"
+                    returnDict["address"] = "\(addressTextField.text!), \(cityTextField.text!), \(stateTextField.text!), \(zipTextField.text!)"
                     
                     var modelData = [String: Dictionary<String,String>]()
                     modelData["modelData"] = returnDict
@@ -154,23 +154,19 @@ class ExtraInfoViewController: UITableViewController,UITextFieldDelegate {
                 print(response.result)   // result of response serialization
                 print(response.request?.HTTPBody)
                 
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                if let JSONResponse = response.result.value {
+                    print("JSON: \(JSONResponse)")
+                    
+//                    if let dataFromString = JSONResponse.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+                        let json = JSON(JSONResponse)
+                        if json["err"] == nil {
+                        NSUserDefaults.standardUserDefaults().setObject(json["patient"]["_id"].stringValue, forKey: "userID")
+                        self.performSegueWithIdentifier("MainVCSegue", sender: nil)
+                        }
+//                    }
                 }
                 
                 print(response.result.value)
-                
-                if let rs = response.result.value as? Dictionary<String,Int> {
-                    print(rs)
-                    
-//                    if let status = rs["status"] {
-//                        //                        let ac = UIAlertController(title: NSLocalizedString("Information Successfully Uploaded", comment: ""), message: nil, preferredStyle: .Alert)
-//                        //                        let action = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .Cancel, handler: nil)
-//                        //                        ac.addAction(action)
-//                        //                        print(status)
-//                        //                        self.presentViewController(ac, animated: true, completion: nil)
-//                    }
-                }
         }
     }
     
