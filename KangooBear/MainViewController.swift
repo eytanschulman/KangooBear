@@ -29,6 +29,8 @@ class MainViewController: UIViewController {
         sendRequest()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "removeUserDefaults")
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: self, action: "sendPush")
     }
     
     
@@ -54,7 +56,15 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func performRequest() {
-        
+
+    }
+    
+    func sendPush() {
+        let notification = UILocalNotification()
+        notification.fireDate = NSDate(timeIntervalSinceNow: 5)
+        notification.alertBody = "Your doctor has prescribed you a new dosage of insulin"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
     func sendRequest() {

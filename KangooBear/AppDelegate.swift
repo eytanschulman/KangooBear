@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = nvc
         }
         
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
+        
         return true
     }
 
