@@ -18,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 0.090196, green: 0.568627, blue: 0.823529, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().barStyle = .Black
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if userDefaults.objectForKey("userID") != nil {
+            let sb = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let nvc = sb.instantiateViewControllerWithIdentifier("MainScreenNavController")
+            self.window?.rootViewController = nvc
+        }
+        
         return true
     }
 

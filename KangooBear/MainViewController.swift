@@ -24,7 +24,33 @@ class MainViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        loadDataFromDefaults()
+        
         sendRequest()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "removeUserDefaults")
+    }
+    
+    
+    
+    func removeUserDefaults() {
+//        NSDictionary *defaultsDictionary = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
+//        for (NSString *key in [defaultsDictionary allKeys]) {
+//            [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+//        }
+        
+        let defaultsDict = NSUserDefaults.standardUserDefaults().dictionaryRepresentation()
+        for key in defaultsDict.keys {
+            NSUserDefaults.standardUserDefaults().removeObjectForKey(key)
+        }
+    }
+    
+    func loadDataFromDefaults() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        self.dosageLevelLabel.text = userDefaults.objectForKey("dosage") as? String
+        self.costLabel.text = userDefaults.objectForKey("cost") as? String
+        self.deliveryTimeLabel.text = userDefaults.objectForKey("deliveryTime") as? String
+        self.addressLabel.text = userDefaults.objectForKey("") as? String
     }
     
     @IBAction func performRequest() {
@@ -49,6 +75,12 @@ class MainViewController: UIViewController {
                 userDefaults.setObject(json["patients"]["cost"].stringValue, forKey: "cost")
                 userDefaults.setObject(json["patients"]["deliveryTime"].stringValue, forKey: "deliveryTime")
                 userDefaults.setObject(json["patients"]["address"].stringValue, forKey: "address")
+                
+                self.dosageLevelLabel.text = json["patients"]["dosage"].stringValue
+                self.costLabel.text = json["patients"]["cost"].stringValue
+                self.deliveryTimeLabel.text = json["patients"]["deliveryTime"].stringValue
+                self.addressLabel.text = json["patients"]["address"].stringValue
+                
                 print(json)
                 
                 if Int(json["patients"]["dosage"].stringValue.stringByReplacingOccurrencesOfString("IU", withString: "")) == 100 {
