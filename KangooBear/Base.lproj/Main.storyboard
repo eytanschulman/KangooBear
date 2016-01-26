@@ -46,7 +46,7 @@
                                     <constraint firstAttribute="height" constant="44" id="CYH-iM-W5F"/>
                                     <constraint firstAttribute="width" constant="234" id="IIO-8z-pQb"/>
                                 </constraints>
-                                <string key="text">Insulin perscription and supply
+                                <string key="text">Insulin prescription and supply
 before you need it.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>

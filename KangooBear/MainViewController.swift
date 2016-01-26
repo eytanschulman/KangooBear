@@ -150,7 +150,7 @@ class MainViewController: UIViewController {
         
         if let userID = NSUserDefaults.standardUserDefaults().objectForKey("userID") as? String! {
             
-            Alamofire.request(.POST, "http://kangoobear.herokuapp.com/api/patients/\(userID))", headers:headers, encoding: encoding).validate(statusCode: 200..<300)
+            Alamofire.request(.POST, "http://kangoobear.herokuapp.com/api/patients/\(userID)", headers:headers, encoding: encoding).validate(statusCode: 200..<300)
                 .responseJSON{(response) in
                     
                     print(response.request)  // original URL request
